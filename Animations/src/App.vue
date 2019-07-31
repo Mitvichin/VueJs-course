@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h1>Animations</h1>
-        <!-- <button class="btn btn-primary" @click="show = !show">Show Alert</button>
+        <button class="btn btn-primary" @click="show = !show">Show Alert</button>
         <hr />
         <select v-model="alertAnimation" class="form-control">
           <option value="fade">Fade</option>
@@ -40,7 +40,7 @@
           :css="false"
         >
           <div style="width:300px; height: 100px; background-color:lightgreen" v-if="load"></div>
-        </transition> -->
+        </transition>
         <hr />
         <button class="btn btn-primary" @click="changeComponent()">Change Component</button>
         <br />
