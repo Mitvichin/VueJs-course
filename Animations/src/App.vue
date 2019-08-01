@@ -58,8 +58,7 @@
               :key="i+'id' + number"
               @click="removeItem(i)"
               style="cursor:pointer"
-            >
-            {{number}}</li>
+            >{{number}}</li>
           </transition-group>
         </ul>
       </div>
@@ -185,8 +184,8 @@ export default {
   position: absolute;
 }
 
-.slide-move{
-    transition: transform 1s;
+.slide-move {
+  transition: transform 1s;
 }
 
 @keyframes slide-in {
