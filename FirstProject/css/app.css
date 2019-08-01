@@ -92,3 +92,42 @@ button {
 #give-up:hover {
     background-color: #c7c7c7;
 }
+
+.slide-enter{
+opacity: 0;
+}
+
+.slide-enter-active{
+animation: slide-in 1s ease;
+transition: opacity 1s;
+}
+
+.slide-leave{
+
+}
+
+.slide-move{
+    transition: transform 1s;
+}
+
+.slide-leave-active{
+animation: slide-out 1s ease;
+}
+
+@keyframes slide-in{
+    from{
+        transform: translate(20px)
+    }
+    to{
+        transform: translate(0)
+    }
+}
+
+@keyframes slide-out{
+    from{
+        transform: translate(0)
+    }
+    to{
+        transform: translate(20px)
+    }
+}

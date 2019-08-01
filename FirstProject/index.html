@@ -50,10 +50,12 @@
         </section>
         <section class="row log">
             <div class="small-12 columns">
-                <ul>
-                    <li v-for="battleLog in battleLogs" :class="battleLog.cssClassName">
-                        <div>{{battleLog.attacker}} {{battleLog.action}} for {{battleLog.amount}}</div>                        
-                    </li>
+                <ul style="transition: 1s">
+                    <transition-group name="slide">
+                        <li v-for="(battleLog,i) in battleLogs" :key="battleLog +'id' + i " :class="battleLog.cssClassName">
+                            <div>{{battleLog.attacker}} {{battleLog.action}} for {{battleLog.amount}}</div>                        
+                        </li>
+                    </transition-group>
                 </ul>
             </div>
         </section>
