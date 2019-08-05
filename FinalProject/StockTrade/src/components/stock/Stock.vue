@@ -44,7 +44,7 @@ export default {
       const order = {
         id: this.stock.id,
         price: this.stock.price,
-        quantity: this.quantity
+        quantity: +this.quantity
       };
       
       const orderCost = order.price * order.quantity;
