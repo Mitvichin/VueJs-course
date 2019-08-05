@@ -11,7 +11,6 @@
 export default {
   computed: {
     balance() {
-      console.log(this.$store.state)
       return this.$store.state.portfolio.balance;
     }
   }

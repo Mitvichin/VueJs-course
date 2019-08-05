@@ -27,10 +27,7 @@ const mutations = {
     const record = state.stocks.find(stock => stock.id == id);
 
     if (record) {
-      console.log(typeof record.quantity);
-      console.log(typeof quantity);
       record.quantity = Number.parseInt(record.quantity) + Number.parseInt(quantity);
-      console.log(record.quantity);
     } else {
       state.stocks.push({ id, quantity });
     }

@@ -53,7 +53,6 @@ export default {
         alert("You don't have enough money to make this purchase!");
       } else {
         this.buyStock(order);
-        console.log(this.$store.state);
       }
 
       this.quantity = 0;
