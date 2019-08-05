@@ -7,6 +7,7 @@ const state = {
 const mutations = {
   SET_STOCKS(state, payload) {
     state.stocks = payload;
+    
   },
   RND_STOCKS(state) {
     state.stocks.forEach(stock => {
