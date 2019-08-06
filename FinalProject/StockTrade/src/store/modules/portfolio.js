@@ -10,7 +10,7 @@ const getters = {
   stocks: (state, getters, rootState, rootGetters) => {
     return state.stocks.map(stock => {
       const record = rootGetters["stocks/stocks"].find(
-        element => (element.id = stock.id)
+        element => (element.id == stock.id)
       );
       return {
         id: stock.id,
@@ -25,7 +25,6 @@ const getters = {
 const mutations = {
   BUY_STOCK(state, { id, quantity, price }) {
     const record = state.stocks.find(stock => stock.id == id);
-
     if (record) {
       record.quantity = Number.parseInt(record.quantity) + Number.parseInt(quantity);
     } else {
