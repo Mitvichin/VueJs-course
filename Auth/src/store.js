@@ -80,7 +80,7 @@ export default new Vuex.Store({
           localStorage.setItem("token", res.data.idToken);
           localStorage.setItem("userId", res.data.localId);
           localStorage.setItem("expDate", expDate);
-          dispatch("setLogout", res.data.expiresIn);
+          dispatch("setLogout", res.data.expiresIn * 1000);
         })
         .catch(error => console.log(error));
     },
