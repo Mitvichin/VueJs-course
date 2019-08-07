@@ -38,7 +38,7 @@ export default new Vuex.Store({
       setTimeout(() => {
         console.log("timer!!");
         commit("clearAuthData");
-      }, payload * 1000);
+      }, payload);
     },
     logout({ commit }) {
       commit("clearAuthData");
@@ -84,18 +84,19 @@ export default new Vuex.Store({
         })
         .catch(error => console.log(error));
     },
-    tryAutoLogin({ commit }) {
+    tryAutoLogin({ commit, dispatch }) {
       const token = localStorage.getItem("token");
       if (!token) {
         return;
       }
 
-      const expDate = localStorage.getItem("expDate");
+      const expDate = new Date(localStorage.getItem("expDate"));
       if (new Date() >= expDate) {
         return;
       }
       const userId = localStorage.getItem("userId");
       commit("authUser", { idToken: token, userId });
+      dispatch("setLogout", expDate.getTime());
     },
     saveUser({ commit }, payload) {
       globalAxios
